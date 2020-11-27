@@ -15,3 +15,7 @@ resultado = Counter(lancamentos)
 
 for jogada, ocorrencia in resultado.items():
     print(f'o lado do dado {jogada} ocorreu {ocorrencia} vezes')
+
+
+#Muito melhor que o meu, essa função Counter diminui bastante o código, eu fiz com tripa de if.
+#Não mudaria nada.

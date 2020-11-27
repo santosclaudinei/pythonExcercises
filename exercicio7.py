@@ -34,3 +34,5 @@ for letra in textoLivro:
 resultado = Counter(ocorrencias)
 for variavel, numero in resultado.items():
     print(f'O elemento "{variavel.upper()}" aparece no texto {numero} vezes')
+
+#Boa solução, eu só deixaria a busca key sensitive (Contar letras maiúsculas e minúsculas).

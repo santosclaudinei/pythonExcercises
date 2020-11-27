@@ -19,3 +19,5 @@ numero = int(input("Informe o limite para que possamos gerar as informações so
 numerosPrimos = []
 numerosNaoPrimos = []
 print(f'Os numeros primos entre 1 e {numero} são:\n{mostraNumerosPrimos(numero)}')
+
+#Muito bom, não mudaria nada. Ainda salvou os não primos que podem ser retornados com uma pequena alteração, maneiro.
