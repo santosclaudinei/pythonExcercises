@@ -1,88 +1,34 @@
-# Crie as seguintes classes com suas determinadas carcteristicas
-# ram, hd, processador
+# Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês.
+# Calcule e mostre o total do seu salário no referido mês, sabendo-se que são descontados 11% para o Imposto de Renda,
+# 8% para o INSS e 5% para o sindicato, faça um programa que nos dê:
 
-# Agora, crie a classe Placa_mae, que deve ser composta pelos 3 itens acima
+#     salário bruto.
+#     quanto pagou ao INSS.
+#     quanto pagou ao sindicato.
+#     o salário líquido.
+#     calcule os descontos e o salário líquido, conforme a tabela abaixo:
+#     + Salário Bruto : R$
+#     - IR (11%) : R$
+#     - INSS (8%) : R$
+#     - Sindicato ( 5%) : R$
+#     = Salário Liquido : R$
 
-# Por fim, utilizando herança, crie dispositivos que utilizam a placa mãe;
-# por exemplo: computador
-
-
-class MemoryRam:
-    def __init__(self, capacidade: float, tipo_ram: str, cache: float):
-        self.capacidade = capacidade
-        self.tipo_ram = tipo_ram
-        self.cache = cache
-
-
-    def __repr__(self):
-        return "<cap: {}, type {}, freq {}, cache {}>".format(self.capacidade, self.tipo_ram,
-        self.cache)
-
-
-def create_ram_obj_() -> MemoryRam:
-    capacidade_m = int(input("Informe a capacidade da memoria [2GB / 4GB / 8GB / 16GB]: "))
-    tipo_ram = str(input("Informe o tipo da RAM [DDR3 / DDR4 / DDR5]: "))
-    cache = int(input("Informe o tamanho da cache [3MB / 4MB / 6MB / 8MB / 12MB]: "))
-
-    return MemoryRam(capacidade=capacidade_m, tipo_ram=tipo_ram, cache=cache)
-
-
-class HardDisk:
-    def __init__(self, capacidade, interface_comunicacao):
-        self.capacidade = capacidade
-        self.cache = interface_comunicacao
+######################################################################################################
+def calcula_Tudo(salario):
+    desc_inss = salario * (8 / 100)
+    desc_irpf = salario * (11 / 100)
+    desc_sindicato = salario * (5 / 100)
+    salario_liquido = salario - desc_irpf -desc_inss - desc_sindicato
+    print(f'O salario bruto com base nos calculos do sistema de RH é R$ {salario}')
+    print(f'O desconto referente à taxa recolhida pelo INSS com base nos calculos do sistema de RH é R$ {desc_inss}')
+    print(f'O desconto referente à taxa recolhida pelo SINDICATO calculos do sistema de RH é R$ {desc_sindicato}')
+    print(f'O desconto referente à taxa retida na folha para Imposto de Renda com base nos calculos do sistema de RH'
+          f' é R$ {desc_irpf}')
+    print(f'O seu salario final com todos os descontos é de R$ {salario_liquido}')
 
 
-    def __repr__(self):
-        return (f"{self.capacidade}, {self.interface_comunicacao}")
-        # return "<cap: {}, type {}, freq {}, cache {}>".format(self.capacidade, self.tipo_hd,
-        #                                                       self.velocidade, self.interface_comunicacao)
-
-
-def create_hd_obj_() -> HardDisk:
-    capacidade_hd = int(input("Informe o tamanho do armazenameno [500GB / 1TB / 2TB / 5TB]: "))
-    interface_comunicacao = str(input("Informe o tipo de interface desejada: [ATA / SATA I / SATA II / SATA III"))
-
-
-class Processor:
-    def __init__(self, modelo_processor, capacidade_proc, tipo_cache):
-        self.modelo_processor = modelo_processor
-        self.capacidade_proc = capacidade_proc
-        self.tipo_cache = tipo_cache
-
-
-    def __repr__(self):
-        return (f"{self.modelo_processor}, {self.capacidade_proc}, {self.tipo_cache}")
-
-
-def create_proc_obj_() -> Processor:
-    modelo_proc = str(input("Informe o modelo do processador [Core i3 / Core i5 / Core i7 / Core i9]: "))
-    capacidade_proc = int(input("Informe a quantidade de nucleos [2 / 4 / 6]: "))
-    cache = int(input("Informe a capacidade da cache [4MB / 8MB / 12MB]: "))
-
-class MotherBoard(self, MemoryRam, HardDisk, Processor):
-    self.marca = marca
-
-
-
-if __name__ == "__main__":
-    while True:
-        escolha = int(input(
-            """Escolha o produto dentre as opções abaixo:
-            1 - Escolher Memoria RAM
-            2 - Escolher Disco Rigido
-            3 - Escolher Processador
-            0 - Sair\n
-            Informe a opção desejada: """))
-
-        if (0 <= escolha <= 3):
-            if (escolha ==  1):
-                memoria = create_ram_obj_()
-            elif (escolha == 2):
-                hd = create_hd_obj_()
-            elif (escolha == 3):
-                processador = create_proc_obj_()
-            else:
-                print("Agradecemos sua visita a loja. Volte sempre!")
-                break
+valor_hora_trabalhada = float(input('Informe quanto você ganha por hora: '))
+num_horas_trabalhadas = int(input('Informe o numero de horas que trabalhou nesse mês: '))
+salario_bruto = valor_hora_trabalhada * num_horas_trabalhadas
+calcula_Tudo(salario_bruto)
 
