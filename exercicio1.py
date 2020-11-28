@@ -32,3 +32,5 @@ num_horas_trabalhadas = int(input('Informe o numero de horas que trabalhou nesse
 salario_bruto = valor_hora_trabalhada * num_horas_trabalhadas
 calcula_Tudo(salario_bruto)
 
+#Está bom, acho que a única alteração que eu faria seria tirar os prints de dentro da função para ela só retornar
+# os cálculos e printaria fora. (Inclusive olhando aqui eu pensei em como melhorar o meu tbm) 

@@ -20,7 +20,7 @@ def calculaRendimento(qtd_lata, qtd_galao):
     return rend_lata, rend_galao
 
 
-def calculaMelhor(area_a_pintar, rendimento_A, rendimento_B):
+def calculaMelhor(area_a_pintar, rendimento_A, rendimento_B): #rendimento_lata, rendimento_galao
     melhor_A = area_a_pintar // rendimento_A
     melhor_B = round(area_a_pintar - (melhor_A * rendimento_A))
     sobra = ceil(melhor_B / rendimento_B) * 1.1
@@ -64,3 +64,5 @@ Abaixo estão os orcamentos com os produtos, quantidades e seus respectivos pre�
 [3] -       TOTAL           {ceil(melhor_A + sobra)} Und.           R$ {melhor_A * preco_lata + (sobra
     * preco_galao):.2f}
 """)
+
+#Eu só trocaria o nome das variáveis 'melhor_A' e 'melhor_B' para melhor leitura.

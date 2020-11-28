@@ -31,3 +31,7 @@ ladoC = int(input("Informe o lado C do triangulo: "))
 
 forma_triangulo(ladoA, ladoB, ladoB)
 
+
+#Mesma mudança do exercício 1, eu tiraria os prints de dentro da função. Lembrando também que o "end=' '"
+#não é necessário nessa ocasião, dava pra fazer: 
+# print(f'Os valores digitados foram {a}, {b} e {c}. Formam um TRIÂNGULO tal')
